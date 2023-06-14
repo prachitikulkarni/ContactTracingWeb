@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body {background-color: black;text-align: center;}
+        h1   {color: white;text-align: center;font-size: 50px;}
+        button {color: white; background-color: blue; text-align:center;font-size: 100px;}
+        label {color: white;display: inline-block;text-align: left;}
+        text {color: white;text-align: center;} 
+        .error {color: red;text-align: center;}
+    </style>
+    <body>
+        <h1>Threshold Settings</h1>
+        <br>
+        <br>
+        <form action="" method="post">
+            <label for="sigma_RSSI">&sigma; RSSI:</label>
+            <br>
+            <input
+                type="number"
+                placeholder="&sigma; RSSI"
+                name="number"
+                value="{{
+              request.form.sigma_RSSI }}"
+            >
+            <br>
+            <br>
+            <label for="delta_RSSI">&Delta; RSSI</label>
+            <br>
+            <input
+                type="number"
+                placeholder="&Delta;RSSI"
+                name="delta_RSSI"
+                value="{{
+              	request.form.delta_RSSI }}">
+            <br>
+            <br>
+            <input type="submit" value="Modify Thresholds">
+        </form>
+        </body>
+    </html>

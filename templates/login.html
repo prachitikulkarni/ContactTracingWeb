@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body {background-color: black;text-align: center;}
+        h1   {color: white;text-align: center;font-size: 50px;}
+        button {color: white; background-color: blue; text-align:center;font-size: 100px;}
+        label {color: white;display: inline-block;text-align: left;}
+        text {color: white;text-align: center;} 
+        .error {color: red;text-align: center;}
+    </style>
+    <body>
+        <h1>Login to Contact Tracing Application</h1>
+        <br>
+        <br>
+        <form action="" method="post">
+            <label for="username">Username:</label>
+            <br>
+            <input
+                type="text"
+                placeholder="Username"
+                name="username"
+                value="{{
+              request.form.username }}"
+            >
+            <br>
+            <br>
+            <label for="password">Password:</label>
+            <br>
+            <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                value="{{
+              request.form.password }}"
+            >
+            <br>
+            <br>
+            <input type="submit" value="Login">
+        </form>
+        {% if error %}
+        <p class="error">
+            <strong>Error:</strong>{{ error }}
+           {% endif %}
+        </body>
+    </html>

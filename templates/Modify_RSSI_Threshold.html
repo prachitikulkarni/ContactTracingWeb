@@ -19,6 +19,8 @@
                 type="number"
                 placeholder="&sigma; RSSI"
                 name="number"
+                min="-90"
+                max="-10"
                 value="{{
               request.form.sigma_RSSI }}"
             >
@@ -30,6 +32,8 @@
                 type="number"
                 placeholder="&Delta;RSSI"
                 name="delta_RSSI"
+                min="-90"
+                max="-10"
                 value="{{
               	request.form.delta_RSSI }}">
             <br>

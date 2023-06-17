@@ -29,7 +29,6 @@ class FixedStationData(db.Model):
 with app.app_context():
     db.create_all()
 
-
 # Login interface to validate users
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -43,6 +42,7 @@ def login():
 
 
 # Push data URL for ESP-32 
+# URL format: http://127.0.0.1:5000/PushData?fixed_station_id=101&beacon_id=201&RSSI=-30
 @app.route("/PushData")
 def PushData():
     fixed_station_id1 = request.args.get('fixed_station_id')

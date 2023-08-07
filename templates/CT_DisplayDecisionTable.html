@@ -1,0 +1,36 @@
+{% extends "CT_Base.html" %}
+
+{% block content %}
+  <form action="/DecisionTable" method="POST">
+    <select name="selected_item" style="width: 80px;height: 40px;font-size: 20px;">    
+        {% for item in data %}
+        <option value="{{ item[0] }}">{{ item[0] }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="submit" name="submit" style="width: 80px; height:40px;font-size: 20px;">
+    <h2></h2>
+  </form>
+
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Timestamp</th>
+        <th>Beacon 1</th>
+        <th>Beacon 2</th>
+        <th>Votes</th>
+        <th>Proximity</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for data in DecisionData %}
+        <tr>
+          <td>{{ data[0]}}</td>
+          <td>{{ data[1]}}</td>
+          <td>{{ data[2]}}</td>
+          <td>{{ data[3]}}</td>
+          <td>{{ data[4]}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

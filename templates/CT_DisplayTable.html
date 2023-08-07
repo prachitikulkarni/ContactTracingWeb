@@ -1,0 +1,36 @@
+{% extends "CT_Base.html" %}
+
+{% block content %}
+  <form action="/FixedStation101" method="POST">
+    <select name="selected_item" style="width: 80px;height: 40px;font-size: 20px;">    
+        {% for item in data %}
+        <option value="{{ item[0] }}">{{ item[0] }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="submit" name="submit" style="width: 80px; height:40px;font-size: 20px;">
+    <h2></h2>
+  </form>
+
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Event ID</th>
+        <th>Epochtime</th>
+        <th>Fixed Station ID</th>
+        <th>Becaon ID</th>
+        <th>RSSI</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for fsdata in fixstationdata %}
+        <tr>
+          <td>{{ fsdata[0]}}</td>
+          <td>{{ fsdata[1]}}</td>
+          <td>{{ fsdata[2]}}</td>
+          <td>{{ fsdata[3]}}</td>
+          <td>{{ fsdata[4]}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
